@@ -17,25 +17,27 @@ function Menu() {
         <div className="button__container">
           {isburgerVisible && (
             <button
-              className="fas fa-bars button button--burger-menu"
-              style={{ color: `white` }}
+              className="button"
               onClick={() => {
                 setIsmenuVisible(true);
                 setIsBurgerVisible(false);
                 setIsCloseVisible(true);
               }}
-            ></button>
+            >
+              <i class="fas fa-bars fa-lg" style={{ color: `white` }} />
+            </button>
           )}
           {isCloseVisible && (
             <button
-              className="fas fa-times button button--close-menu"
-              style={{ color: `white` }}
+              className="button"
               onClick={() => {
                 setIsmenuVisible(false);
                 setIsBurgerVisible(true);
                 setIsCloseVisible(false);
               }}
-            ></button>
+            >
+              <i class="fas fa-times fa-lg" style={{ color: `white` }} />
+            </button>
           )}
         </div>
       </div>
@@ -47,9 +49,9 @@ function Menu() {
                 <img className="avatar" src={avatar} alt="avatar" />
               </div>
               <ul className="user-list">
-                <li className="user-list__item">Dominik</li>
+                <li className="user-list__item">Benjamin</li>
                 <li className="user-list__item">Available Balance</li>
-                <li className="user-list__item">£1,500:00</li>
+                <li className="user-list__item">£3,800:00</li>
               </ul>
             </div>
           </div>
