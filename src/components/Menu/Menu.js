@@ -1,150 +1,83 @@
-import React, { Fragment } from 'react';
-import styled from 'styled-components/macro';
+import React, { Fragment, useState } from 'react';
 import companyLogo from '../../images/awaymoFullWhite.svg';
 import avatar from '../../images/avatar.png';
-
-const MenuContainer = styled.div`
-  padding: 1.5rem 1rem;
-`;
-
-const LogoButtonContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  border-bottom: 1px solid white;
-`;
-
-const LogoContainer = styled.div`
-  height: 1.5rem;
-  padding-bottom: 1rem;
-
-  img {
-    height: 100%;
-    width: auto;
-  }
-`;
-
-const ButtonContainer = styled.div`
-  position: absolute;
-  /* Don't like this - refactor */
-  right: 1rem;
-  top: 1rem;
-`;
-
-const UserInfoContainer = styled.section`
-  display: flex;
-  justify-content: center;
-  color: white;
-`;
-
-const UserInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 1.5rem 0;
-  align-items: center;
-`;
-
-const AvatarContainer = styled.div`
-  height: 50px;
-  width: 50px;
-  background-color: white;
-  border: 10px solid white;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  img {
-    height: 100%;
-    width: auto;
-  }
-`;
-
-const UserList = styled.ul`
-  color: white;
-  list-style-type: none;
-  padding: 0;
-  text-align: center;
-
-  li {
-    padding-bottom: 0.25rem;
-  }
-`;
-
-const Nav = styled.nav`
-  background-color: #ee5f63;
-`;
-
-const NavItems = styled.ul`
-  list-style-type: none;
-  padding: 0;
-  color: white;
-
-  li {
-    border-bottom: 1px solid white;
-    padding: 1rem 0;
-
-    :last-child {
-      padding-bottom: 3rem;
-    }
-  }
-`;
-
-const ContactDetailsContainer = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
-const ContactDetailsList = styled.ul`
-  list-style-type: none;
-  padding: 0;
-  color: white;
-`;
+import './Menu.css';
 
 function Menu() {
+  const [ismenuVisible, setIsmenuVisible] = useState(false);
+  const [isburgerVisible, setIsBurgerVisible] = useState(true);
+  const [isCloseVisible, setIsCloseVisible] = useState(false);
+
   return (
     <Fragment>
-      <MenuContainer>
-        <LogoButtonContainer>
-          <LogoContainer>
-            <img src={companyLogo} alt="logo" />
-          </LogoContainer>
-          <ButtonContainer>
-            <i class="fas fa-bars" style={{ color: `white` }}></i>
-          </ButtonContainer>
-        </LogoButtonContainer>
-        <UserInfoContainer>
-          <UserInfo>
-            <AvatarContainer>
-              <img src={avatar} alt="avatar" />
-            </AvatarContainer>
-            <UserList>
-              <li>Dominik</li>
-              <li>Available Balance</li>
-              <li>£1,500:00</li>
-            </UserList>
-          </UserInfo>
-        </UserInfoContainer>
+      <div className="logo-button__container">
+        <div className="logo__container">
+          <img className="logo" src={companyLogo} alt="logo" />
+        </div>
+        <div className="button__container">
+          {isburgerVisible && (
+            <button
+              className="fas fa-bars button button--burger-menu"
+              style={{ color: `white` }}
+              onClick={() => {
+                setIsmenuVisible(true);
+                setIsBurgerVisible(false);
+                setIsCloseVisible(true);
+              }}
+            ></button>
+          )}
+          {isCloseVisible && (
+            <button
+              className="fas fa-times button button--close-menu"
+              style={{ color: `white` }}
+              onClick={() => {
+                setIsmenuVisible(false);
+                setIsBurgerVisible(true);
+                setIsCloseVisible(false);
+              }}
+            ></button>
+          )}
+        </div>
+      </div>
+      {ismenuVisible && (
+        <div className="menu__container">
+          <div className="user-info__container">
+            <div className="user-info">
+              <div className="avatar__container">
+                <img className="avatar" src={avatar} alt="avatar" />
+              </div>
+              <ul className="user-list">
+                <li className="user-list__item">Dominik</li>
+                <li className="user-list__item">Available Balance</li>
+                <li className="user-list__item">£1,500:00</li>
+              </ul>
+            </div>
+          </div>
 
-        <Nav>
-          <NavItems>
-            <li>Profile</li>
-            <li>My Bookings</li>
-            <li>My Payments</li>
-            <li>Support</li>
-            <li>Contact Us</li>
-            <li>Log Out</li>
-            <li>About</li>
-            <li>FAQ</li>
-          </NavItems>
-        </Nav>
-        <ContactDetailsContainer>
-          <ContactDetailsList>
-            <li>We're here to help</li>
-            <li>+44 (0) 20 8050 3459</li>
-            <li>support@awaymo.com</li>
-          </ContactDetailsList>
-        </ContactDetailsContainer>
-      </MenuContainer>
+          <nav className="nav">
+            <ul className="nav__list">
+              <li className="nav-list__item">Profile</li>
+              <li className="nav-list__item">My Bookings</li>
+              <li className="nav-list__item">My Payments</li>
+              <li className="nav-list__item">Support</li>
+              <li className="nav-list__item">Contact Us</li>
+              <li className="nav-list__item">Log Out</li>
+              <li className="nav-list__item">About</li>
+              <li className="nav-list__item">FAQ</li>
+            </ul>
+          </nav>
+          <section className="contact-details">
+            <ul className="contact-details__list">
+              <li className="contact-details-list__item">We're here to help</li>
+              <li className="contact-details-list__item">
+                +44 (0) 20 8050 3459
+              </li>
+              <li className="contact-details-list__item">support@awaymo.com</li>
+            </ul>
+          </section>
+        </div>
+        // </Fragment>
+      )}
     </Fragment>
   );
 }
