@@ -1,6 +1,5 @@
 import React, { Fragment, useState } from 'react';
 import companyLogo from '../../images/awaymoFullWhite.svg';
-import avatar from '../../images/avatar.png';
 import './Menu.css';
 
 function Menu() {
@@ -99,7 +98,6 @@ function Menu() {
             </ul>
           </section>
         </div>
-        // </Fragment>
       )}
     </Fragment>
   );
