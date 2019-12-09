@@ -1,3 +1,22 @@
+.app__container {
+  background-color: rgb(5, 189, 180);
+}
+
 .app__header {
-  background-color: #ee5f63;
+  padding-top: 1.5rem;
+  padding-right: 1rem;
+  padding-bottom: 0;
+  padding-left: 1rem;
+}
+
+ul {
+  font-weight: 500;
+}
+
+.text--small {
+  font-size: 0.8rem;
+}
+
+.text--large {
+  font-size: 1.25rem;
 }
