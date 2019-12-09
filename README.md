@@ -1,3 +1,9 @@
+This React menu component is built with React Hooks and uses Reach Router for routing.
+
+Run `npm install` to install the project's dependencies, followed by `npm start` to view the app on http://localhost:3000/ or your desired localhost url.
+
+Thank you!
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
