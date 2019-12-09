@@ -1,3 +1,7 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
 .app__container {
   background-color: rgb(5, 189, 180);
 }
@@ -19,4 +23,8 @@ ul {
 
 .text--large {
   font-size: 1.25rem;
+}
+
+.text--bold {
+  font-weight: bold;
 }

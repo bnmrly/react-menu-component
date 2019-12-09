@@ -46,7 +46,9 @@ function Menu() {
             <div className="user-info">
               <i class="fas fa-user-circle fa-3x"></i>
               <ul className="user-list">
-                <li className="user-list__item text--large">Benjamin</li>
+                <li className="user-list__item text--large text--bold">
+                  Benjamin
+                </li>
                 <li className="user-list__item">Available Balance</li>
                 <li className="user-list__item">£3,800.00</li>
               </ul>
@@ -83,7 +85,9 @@ function Menu() {
           </nav>
           <section className="contact-details">
             <ul className="contact-details__list">
-              <li className="contact-details-list__item">We're here to help</li>
+              <li className="contact-details-list__item text--bold ">
+                We're here to help
+              </li>
               <li className="contact-details-list__item text--small">
                 +44 (0) 20 8050 3459
               </li>
