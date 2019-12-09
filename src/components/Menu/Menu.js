@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import { Link } from '@reach/router';
-import companyLogo from '../../images/awaymoFullWhite.svg';
+import logo from '../../images/logo.png';
 import './Menu.css';
 
 function Menu() {
@@ -19,7 +19,7 @@ function Menu() {
               setIsmenuVisible(false);
             }}
           >
-            <img className="logo" src={companyLogo} alt="logo" />
+            <img className="logo" src={logo} alt="logo" />
           </Link>
         </div>
         <div className="button__container">
