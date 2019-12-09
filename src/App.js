@@ -2,14 +2,35 @@ import React from 'react';
 import Menu from './components/Menu/Menu';
 import './App.css';
 
+// Routes
+import { Router } from '@reach/router';
+import Home from './components/Routes/Home/Home';
+import Profile from './components/Routes/Profile/Profile';
+import MyBookings from './components/Routes/MyBookings/MyBookings';
+import MyPayments from './components/Routes/MyPayments/MyPayments';
+import Support from './components/Routes/Support/Support';
+import Contact from './components/Routes/Contact/Contact';
+import Logout from './components/Routes/Logout/Logout';
+import About from './components/Routes/About/About';
+import Faq from './components/Routes/Faq/Faq';
+
 function App() {
-  // I need something like this that I can add in app but i need to pass it down as props then I need to add a page to each link with lorem ipsum and add routes but start with home page hiding and showing then move on
-  // const [isHomePageVisible, setIsHomePageVisible] = useState(true);
   return (
     <div className="app__container">
       <header className="app__header">
         <Menu />
       </header>
+      <Router>
+        <Home path="/" />
+        <Profile path="/profile" />
+        <MyBookings path="/my-bookings" />
+        <MyPayments path="/my-payments" />
+        <Support path="/support" />
+        <Contact path="/contact" />
+        <Logout path="/logout" />
+        <About path="/about" />
+        <Faq path="/faq" />
+      </Router>
     </div>
   );
 }

@@ -81,6 +81,11 @@
   padding-bottom: 3rem;
 }
 
+.nav-list__link {
+  text-decoration: none;
+  color: inherit;
+}
+
 i {
   padding-right: 0.5rem;
 }

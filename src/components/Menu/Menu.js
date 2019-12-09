@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import { Link } from '@reach/router';
 import companyLogo from '../../images/awaymoFullWhite.svg';
 import './Menu.css';
 
@@ -11,7 +12,15 @@ function Menu() {
     <Fragment>
       <div className="logo-button__container">
         <div className="logo__container">
-          <img className="logo" src={companyLogo} alt="logo" />
+          <Link
+            className="nav-list__link"
+            to="/"
+            onClick={() => {
+              setIsmenuVisible(false);
+            }}
+          >
+            <img className="logo" src={companyLogo} alt="logo" />
+          </Link>
         </div>
         <div className="button__container">
           {isburgerVisible && (
@@ -58,28 +67,112 @@ function Menu() {
           <nav className="nav">
             <ul className="nav__list">
               <li className="nav-list__item">
-                <i class="fas fa-user"></i>Profile
+                <Link
+                  className="nav-list__link"
+                  to="profile"
+                  onClick={() => {
+                    setIsmenuVisible(false);
+                    setIsBurgerVisible(true);
+                    setIsCloseVisible(false);
+                  }}
+                >
+                  <i class="fas fa-user"></i>
+                  Profile
+                </Link>
               </li>
               <li className="nav-list__item">
-                <i class="fas fa-plane-departure"></i>My Bookings
+                <Link
+                  className="nav-list__link"
+                  to="my-bookings"
+                  onClick={() => {
+                    setIsmenuVisible(false);
+                    setIsBurgerVisible(true);
+                    setIsCloseVisible(false);
+                  }}
+                >
+                  <i class="fas fa-plane-departure"></i>
+                  My Bookings
+                </Link>
               </li>
               <li className="nav-list__item">
-                <i class="fas fa-credit-card"></i>My Payments
+                <Link
+                  className="nav-list__link"
+                  to="my-payments"
+                  onClick={() => {
+                    setIsmenuVisible(false);
+                    setIsBurgerVisible(true);
+                    setIsCloseVisible(false);
+                  }}
+                >
+                  <i class="fas fa-credit-card"></i>
+                  My Payments
+                </Link>
               </li>
               <li className="nav-list__item">
-                <i class="fas fa-life-ring"></i>Support
+                <Link
+                  className="nav-list__link"
+                  to="support"
+                  onClick={() => {
+                    setIsmenuVisible(false);
+                    setIsBurgerVisible(true);
+                    setIsCloseVisible(false);
+                  }}
+                >
+                  <i class="fas fa-life-ring"></i>Support
+                </Link>
               </li>
               <li className="nav-list__item">
-                <i class="fas fa-phone-alt"></i>Contact Us
+                <Link
+                  className="nav-list__link"
+                  to="contact"
+                  onClick={() => {
+                    setIsmenuVisible(false);
+                    setIsBurgerVisible(true);
+                    setIsCloseVisible(false);
+                  }}
+                >
+                  <i class="fas fa-phone-alt"></i>Contact Us
+                </Link>
               </li>
               <li className="nav-list__item">
-                <i class="fas fa-sign-out-alt"></i>Log Out
+                <Link
+                  className="nav-list__link"
+                  to="logout"
+                  onClick={() => {
+                    setIsmenuVisible(false);
+                    setIsBurgerVisible(true);
+                    setIsCloseVisible(false);
+                  }}
+                >
+                  <i class="fas fa-sign-out-alt"></i>Log Out
+                </Link>
               </li>
               <li className="nav-list__item">
-                <i class="fas fa-question-circle"></i>About
+                <Link
+                  className="nav-list__link"
+                  to="about"
+                  onClick={() => {
+                    setIsmenuVisible(false);
+                    setIsBurgerVisible(true);
+                    setIsCloseVisible(false);
+                  }}
+                >
+                  <i class="fas fa-question-circle"></i>About
+                </Link>
               </li>
               <li className="nav-list__item">
-                <i class="fas fa-info"></i>FAQ
+                {/* <i class="fas fa-info"></i>FAQ */}
+                <Link
+                  className="nav-list__link"
+                  to="faq"
+                  onClick={() => {
+                    setIsmenuVisible(false);
+                    setIsBurgerVisible(true);
+                    setIsCloseVisible(false);
+                  }}
+                >
+                  <i class="fas fa-info"></i>FAQ
+                </Link>
               </li>
             </ul>
           </nav>
